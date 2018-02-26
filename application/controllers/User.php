@@ -26,6 +26,7 @@ class User extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('user_model');
 		$this->load->library('session');
+		$this->load->library('encryption');
 	}
 
 	public function index()
