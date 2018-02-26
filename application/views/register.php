@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Welcome to Login Page</title>
+	<title>Welcome to Register Page</title>
 
 	<style type="text/css">
 
@@ -68,12 +68,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-	<h1>Welcome to Login!</h1>
+	<h1>Welcome to Register!</h1>
+
+	<?php
+		$error_msg=$this->session->flashdata('error_msg');
+        if($error_msg){
+        	echo $error_msg;
+     	}
+	?>
 
 	<div id="body">
-		<form role="form" method="post" action="<?php echo base_url('dashboard'); ?>">
+		<form role="form" method="post" action="<?php echo base_url('user/register_user'); ?>">
 			<fieldset>
-				<div class="form-group"  >
+				<div class="form-group">
+				<input class="form-control" placeholder="Name" name="user_name" type="text" autofocus>
+				</div>
+
+				<div class="form-group">
 				<input class="form-control" placeholder="E-mail" name="user_email" type="email" autofocus>
 				</div>
 
@@ -81,11 +92,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<input class="form-control" placeholder="Password" name="user_password" type="password" value="">
 				</div>
 
-				<input class="btn btn-lg btn-success btn-block" type="submit" value="login" name="login" >
+				<div class="form-group">
+				<input class="form-control" placeholder="Mobile No" name="user_phone" type="number" value="">
+				</div>
+
+				<input class="btn btn-lg btn-success btn-block" type="submit" value="Register" name="register" >
 			</fieldset>
 		</form>
-		<center><b>Not registered ?</b> <br></b><a href="<?php echo('register'); ?>">Register here</a></center>
 	</div>
+
 	<p class="footer">Ram Usage <strong> {memory_usage} </strong> Page rendered in <strong> {elapsed_time} </strong> seconds. 
 		<?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
