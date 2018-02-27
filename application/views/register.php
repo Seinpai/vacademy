@@ -99,9 +99,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<input class="btn btn-lg btn-success btn-block" type="submit" value="Register" name="register" >
 			</fieldset>
 		</form>
+		<center><b>Login Now</b></b><a href="<?php echo('login'); ?>">here</a></center>
 	</div>
 
-	<p class="footer">Ram Usage <strong> {memory_usage} </strong> Page rendered in <strong> {elapsed_time} </strong> seconds. 
+	<p class="footer">Ram Usage <strong> {memory_usage} </strong> Page rendered in <strong> {elapsed_time} </strong> seconds.
 		<?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
 
